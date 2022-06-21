@@ -3,7 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <StartupObject>MyProject.Array.ArrayCharacter</StartupObject>
+	  <StartupObject>MyProject.Array.ArrayMergeRemoveDupA</StartupObject>
   </PropertyGroup>
+
+  
 
 </Project>

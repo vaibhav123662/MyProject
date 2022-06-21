@@ -10,9 +10,16 @@ namespace MyProject.Array
         {
             int[] a = { 1, 5, 2, 6, 3, 4, 8 };
             
-            for(int i = 1; i < a.Length; i=i+2)
+            for(int i = 0; i < a.Length; i++)
             {
-                Console.WriteLine(a[i]);
+                if (i % 2 == 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine(a[i]);
+                }
             }
         }
     }
