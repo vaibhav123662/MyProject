@@ -72,7 +72,7 @@ namespace MyProject.Loop
         static void Main(string[] args)
         {
 
-            int i, j, k;
+            int i, j;
             for (i = 1; i <= 4; i++)
             {
                 for (j = 1; j <= i; j++)

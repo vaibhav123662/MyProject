@@ -8,7 +8,7 @@ namespace MyProject.Loop
     {
         static void Main(string[] args)
         {
-            int count,sum = 0;
+            int sum = 0;
 
         }
     }

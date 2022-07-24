@@ -23,4 +23,26 @@ namespace MyProject.Loop
             }
         }
     }
+
+
+    class Freq
+    {
+        static void Main(string[] args)
+        {
+            string str = "vaibhav";
+            string[] s = str.Split(" ");
+            int count = 1;
+            for (int i = 0; i < s.Length; i++)
+            {
+                for(int j = i + 1; j < s.Length; j++)
+                {
+                    if (s[i] == s[j])
+                    {
+                        count=count+1;
+                    }
+                }
+            }
+            Console.WriteLine(count);
+        }
+    }
 }

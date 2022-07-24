@@ -88,11 +88,7 @@ namespace MyProject.Array
             int[] c = new int[a.Length + b.Length];
             int j = 0;
             
-            for (int i = 0; i < b.Length; i++)
-            {
-                c[j] = b[i];
-                j++;
-            }
+            
             for (int i = 0; i < a.Length; i++)
             {
                 bool isPresent = false;
@@ -109,6 +105,11 @@ namespace MyProject.Array
                     c[j] = a[i];
                     j++;
                 }
+            }
+            for (int i = 0; i < b.Length; i++)
+            {
+                c[j] = b[i];
+                j++;
             }
 
 

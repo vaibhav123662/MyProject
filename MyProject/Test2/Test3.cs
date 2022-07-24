@@ -53,16 +53,17 @@ namespace MyProject.Test2
         {
             char[] arr = { 'a', 'b', 'b', 'c', 'c', 'b' };
             Console.WriteLine("enter character from given array");
-            char ch =Convert.ToChar(Console.ReadLine());
+            char ch = Convert.ToChar(Console.ReadLine());
             int count = 0;
-            for(int i = 0; i <= arr.Length; i++)
+            for (int i = 0; i <= arr.Length; i++)
             {
                 if (ch == arr[i])
                 {
                     count++;
                 }
+                Console.WriteLine(ch+" "+count);
             }
-            Console.WriteLine(ch+" "+count);
+
         }
     }
 
@@ -132,12 +133,12 @@ namespace MyProject.Test2
             get;
             set;
         }
-         public Nib N
+        public Nib N
         {
             get;
             set;
         }
-       
+
         static void Main(string[] args)
         {
             Pen p = new Pen();
@@ -159,47 +160,55 @@ namespace MyProject.Test2
     {
         static void Main(string[] args)
         {
-        /*    int[] a = { 12, 0, 7, 0, 8, 0, 3 };
-            int count = 0,i;
-            for(i = 0; i < a.Length; i++)
+               
+            int[] a = { 12, 0, 7, 0, 8, 0, 3 };
+            for(int i = 0; i < a.Length; i++)
             {
-                if (a[i] > 0)
+                for(int j = i + 1; j < a.Length; j++)
                 {
-                    a[count++] = a[i];
-                    
+
+                if (a[i] == 0)
+                {
+                    int temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp;
+                }
                 }
             }
-            while (count < a.Length)
+            for(int i = 0; i < a.Length; i++)
             {
-                a[count++] = 0;
+                Console.WriteLine(a[i]);
             }
-            Console.WriteLine(a[i]);
-        */}
+            
+        }
     }
 
     class Q6
     {
         static void Main(string[] args)
         {
-            int i, j;
             int[] a = { 4, 3, 2, 4, 9, 2 };
-            int[] a1 = { 4, 3, 2, 9 };
-
-            for(i = 0; i < a.Length; i++)
+            int size = a.Length;
+            for(int i = 0; i < size; i++)
             {
-                for (j = 0; j <= a1.Length; j++)
+                for(int j = i + 1; j < size; j++)
                 {
-                    if (a[i] == a1[j])
+                    if (a[i] == a[j])
                     {
-                        continue;
+                        for(int k = j; k < size-1; k++)
+                        {
+                            a[k] = a[k + 1];
+                        }
+                        size--;
+                        j--;
                     }
-                    else 
-                    { 
-
-                    }
-                   
                 }
             }
+            for(int i = 0; i < size; i++)
+            {
+                Console.WriteLine(a[i]+" ");
+            }
+
         }
     }
     /////////////
@@ -222,15 +231,16 @@ namespace MyProject.Test2
     {
         public int eid;
         public string cleandate;
-
-        public Engine(int eid,string cleandate)
+        SubEngine se;
+        public Engine(int eid, string cleandate, SubEngine se)
         {
             this.eid = eid;
             this.cleandate = cleandate;
+            this.se = se;
         }
         public void show()
         {
-            Console.WriteLine(eid+" "+cleandate);
+            Console.WriteLine(eid + " " + cleandate+" "+se);
         }
     }
 
@@ -253,28 +263,26 @@ namespace MyProject.Test2
         int carid;
         string carcolor;
         Engine e;
-        SubEngine se;
         Gear g;
 
-        public Car(int carid,string carcolor,Engine e,SubEngine se,Gear g)
+        public Car(int carid, string carcolor, Engine e, Gear g)
         {
             this.carid = carid;
             this.carcolor = carcolor;
             this.e = e;
-            this.se = se;
             this.g = g;
         }
 
         void Display()
         {
-            Console.WriteLine(carid+" "+carcolor);
+            Console.WriteLine(carid + " " + carcolor);
             e.show();
-            se.show();
+            g.show();
         }
         static void Main(string[] args)
         {
-/*            Car c = new Car(101, "black", new Engine(114,"12/12/2022", new SubEngine("xyz")), new Gear("Auto"));
-            c.Display();*/
+            Car c = new Car(101, "black", new Engine(11, "12/12/2022", new SubEngine("petrol")), new Gear("Auto"));
+            c.Display();
         }
     }
 
@@ -298,28 +306,41 @@ namespace MyProject.Test2
     {
         static void Main(string[] args)
         {
+            int[] a = { 23, 43, 25, 49, 12, 9, 78, 66, 39, 0 };
 
+            for(int i = 0; i < a.Length; i++)
+            {
+                for(int k = 2; k < a.Length; k++)
+                {
+                    if (a[i] == k * k)
+                    {
+                        Console.WriteLine(a[i]);
+                    }
+                }
+            }
+            
         }
     }
 
     /*public class Q10
     {
-       public static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int a1[], a2;
-            a1 = {1,2,3};
-            a2 = new Strng[a1.length];
-            for(int i = 0; i < a2.length; i++)
+            a1 = { 1,2,3};
+            a2 = new String[a1.length];
+            for (int i = 0; i < a1.length; i++)
             {
                 a2[i] = a1[i];
             }
-            for(int i = 0; i < a2.length(); i++)
+            for (int i = 0; i < a2.length(); i++)
             {
                 Console.WriteLine(a2[i]);
             }
         }
-    }*/
-
+    }
+*/
+    
     class Q13
     {
         static void Main(string[] args)

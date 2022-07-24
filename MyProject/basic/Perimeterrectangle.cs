@@ -14,6 +14,8 @@ namespace MyProject.basic
             perimeter = 2 * (length + width);
 
             Console.WriteLine("Perimeter of rectangle is =" + perimeter);
+
+
         }
 
     }

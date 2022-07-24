@@ -17,4 +17,6 @@ namespace MyProject.basic
             Console.WriteLine(simpleinterest);
         }
     }
+
+   
 }
